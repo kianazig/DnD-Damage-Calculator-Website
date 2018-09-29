@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<link href="css\style.css" type="text/css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<script src="js\myScript.js"></script>
+	<title>D&D Damage Calculator</title>
+</head>
+
+<body>
+	<h1>D&D 5e Damage Calculator</h1>
+
+	<div align="center"><form id="frm1" action="/action_page.php">
+		<div>
+			<label for="toHit">To Hit Bonus:</label>
+			<input type="number" id="toHit" name="to_hit" value="0">
+		</div>
+		<div>
+			<label for="damageDice">Damage Dice:</label>
+			<input type="number" id="numOfDice" name="num_of_dice" value="1">
+			D<input type="number" id="typeOfDice" name="type_of_dice" value="6">
+		</div>
+		<div>
+			<label for="damageBonus">Damage Bonus:</label>
+			<input type="number" id="damageBonus" name="damage_bonus"value ="0">
+		</div>
+		<div>
+			<label for="advantage">Advantage</label>
+			<input type="checkbox" id="advantage" name="adv">
+		</div>
+		<div>
+			<label for="disadvantage">Disadvantage</label>
+			<input type="checkbox" id="disadvantage" name="dis">
+		</div>
+
+		<div>
+			<input type="button" id="submit" name="sub" value="Submit" onclick="fillTable()">
+		</div>
+	</form></div><div align="center"><table id="table1">
+		<tr id="row1">
+			<th>AC</th>
+			<td>10</td>
+			<td>11</td>
+			<td>12</td>
+			<td>13</td>
+			<td>14</td>
+			<td>15</td>
+			<td>16</td>
+			<td>17</td>
+			<td>18</td>
+			<td>19</td>
+			<td>20</td>
+			<td>21</td>
+			<td>22</td>
+			<td>23</td>
+			<td>24</td>
+			<td>25</td>
+		</tr>
+		<tr id="row2">
+			<th>Chance of Hitting</th>
+			<td id="chanceOfHit10"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr id="row3">
+			<th>Average Damage Per Turn</th>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table></div>
+</body>
+
+</html>
