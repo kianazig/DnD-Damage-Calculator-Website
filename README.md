@@ -10,7 +10,7 @@ Uses an HTML form to allow the user to input the following data:
 - Advantage: if the user rolls at advantage, two 20-sided die are rolled and the value of the higher roll is taken
 - Disadvantage: if the user rolls at disadvantage, two 20 sided die are rolled and the value of the lower roll is taken
 
-Outputs the following data:
+Outputs the following data into a table:
 - Chance of Hitting: the chance of hitting armor classes 10-25
 - Average Damage Per Turn: the average damage that would be done per turn for armor classes 10-25. critical hit damage is included in this calculation.
 
