@@ -2,16 +2,18 @@
 Allows the user to input data and uses it to calculate the chance of hitting and average damage per turn during an attack.
 
 
+
 Uses an HTML form to allow the user to input the following data:
-To Hit Bonus: the user's bonus they add to their roll to hit
-Damage Dice: the dice the user rolls to determine how much damage is done (Ex: rolling one die with 6 sides = rolling 1D6)
-Damage Bonus: the number that is added to the result obtained from the damage dice
-Advantage: if the user rolls at advantage, two 20-sided die are rolled and the value of the higher roll is taken
-Disadvantage: if the user rolls at disadvantage, two 20 sided die are rolled and the value of the lower roll is taken
+- To Hit Bonus: the user's bonus they add to their roll to hit
+- Damage Dice: the dice the user rolls to determine how much damage is done (Ex: rolling one die with 6 sides = rolling 1D6)
+- Damage Bonus: the number that is added to the result obtained from the damage dice
+- Advantage: if the user rolls at advantage, two 20-sided die are rolled and the value of the higher roll is taken
+- Disadvantage: if the user rolls at disadvantage, two 20 sided die are rolled and the value of the lower roll is taken
 
 Outputs the following data:
-Chance of Hitting: the chance of hitting armor classes 10-25
-Average Damage Per Turn: the average damage that would be done per turn for armor classes 10-25. critical hit damage is included in this calculation.
+- Chance of Hitting: the chance of hitting armor classes 10-25
+- Average Damage Per Turn: the average damage that would be done per turn for armor classes 10-25. critical hit damage is included in this calculation.
+
 
 
 D&D Combat Rules
