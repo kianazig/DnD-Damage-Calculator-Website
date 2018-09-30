@@ -255,37 +255,43 @@ function compareTables(){
 
 	//checks to see if both tables are filled out
 	if (table1.rows[1].cells[1].innerHTML!="" && table2.rows[1].cells[1].innerHTML!=""){
+		//loops through each column of the table
 		for (var i = 1; i<table1.rows[0].cells.length; i++){
-			if (table1.rows[2].cells[i].innerHTML>table2.rows[2].cells[i].innerHTML){
+			//checks if the average damage in table 1 is greater than in table 2
+			if (parseFloat(table1.rows[2].cells[i].innerHTML)>parseFloat(table2.rows[2].cells[i].innerHTML)){
+				//emphasizes the higher values
 				table1.rows[0].cells[i].style.fontWeight = "bolder";
 				table1.rows[2].cells[i].style.fontWeight = "bolder";
 				table1.rows[0].cells[i].style.color = "black";
 				table1.rows[2].cells[i].style.color = "black";
 
+				//resets the style of the lower values to default
 				table2.rows[0].cells[i].style.fontWeight = "normal";
 				table2.rows[2].cells[i].style.fontWeight = "normal";
 				table2.rows[0].cells[i].style.color = "rgb(77, 77, 77)";
 				table2.rows[2].cells[i].style.color = "rgb(77, 77, 77)";
-
-
 			}
-			else if (table1.rows[2].cells[i].innerHTML<table2.rows[2].cells[i].innerHTML){
+			//checks if the average damage in table 1 is less than in table 2
+			else if (parseFloat(table1.rows[2].cells[i].innerHTML)<parseFloat(table2.rows[2].cells[i].innerHTML)){
+				//resets the style of the lower values to default
 				table1.rows[0].cells[i].style.fontWeight = "normal";
 				table1.rows[2].cells[i].style.fontWeight = "normal";
 				table1.rows[0].cells[i].style.color = "rgb(77, 77, 77)";
 				table1.rows[2].cells[i].style.color = "rgb(77, 77, 77)";
 
+				//emphasizes the higher values
 				table2.rows[0].cells[i].style.fontWeight = "bolder";
 				table2.rows[2].cells[i].style.fontWeight = "bolder";
 				table2.rows[0].cells[i].style.color = "black";
 				table2.rows[2].cells[i].style.color = "black";
 			}
+			//the average damage in both tables is equal
 			else{
+				//sets the style of all values to default
 				table1.rows[0].cells[i].style.fontWeight = "normal";
 				table1.rows[2].cells[i].style.fontWeight = "normal";
 				table2.rows[0].cells[i].style.fontWeight = "normal";
 				table2.rows[2].cells[i].style.fontWeight = "normal";
-
 				table1.rows[0].cells[i].style.color = "rgb(77, 77, 77)";
 				table1.rows[2].cells[i].style.color = "rgb(77, 77, 77)";
 				table2.rows[0].cells[i].style.color = "rgb(77, 77, 77)";
