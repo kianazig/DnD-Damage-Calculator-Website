@@ -15,30 +15,33 @@
 * to calculate data which is then sent to the appropriate locations
 * in the HTML table.
 */
-function fillTable(){
+function fillTable(formID, tableID){
+
+
+	var form = document.getElementById(formID);
+	var table = document.getElementById(tableID);
 
 	//User's to hit bonus. Affects their chance of hititng.
-	var toHit = document.getElementById("toHit").value;
+	var toHit = form.querySelector("input.toHit").value;
 
 	//The amount of damage dice to be rolled.
-	var numOfDice = document.getElementById("numOfDice").value;
+	var numOfDice = form.querySelector("input.numOfDice").value;
 
 	//The type of damage dice to be rolled (how many sides).
-	var typeOfDice = document.getElementById("typeOfDice").value;
+	var typeOfDice = form.querySelector("input.typeOfDice").value;
 
 	//The bonus that's added to damage rolled.
-	var damageBonus = document.getElementById("damageBonus").value;
+	var damageBonus = form.querySelector("input.damageBonus").value;
 
 	//True if rolling at advantage.
-	var advantage = document.getElementById("advantage").checked;
+	var advantage = form.querySelector("input.advantage").checked;
 
 	//True if rolling at disadvantage.
-	var disadvantage = document.getElementById("disadvantage").checked;
+	var disadvantage = form.querySelector("input.disadvantage").checked;
 
 	//The HTML table that results will be displayed on.
 	//Row 2 of the table represents the chance of hitting, Row 3 of the table
 	//represents the average damage per turn.
-	var table = document.getElementById("table1");
 
 	//An array that holds the value of all target Armor Classes (AC).
 	var armor = [table.rows[0].cells.length - 1];
@@ -238,4 +241,56 @@ function getAverageDamage(numOfDice, typeOfDice, damageBonus, chanceOfHit, advan
 		}
 	}
 	return averageDamage;
+}
+
+
+/**
+* Compares the average damage from each table and creates a visual emphasis
+* on the columns in which the average damage done is higher than that of the other table.
+*
+*/
+function compareTables(){
+	var table1 = document.getElementById("table1");
+	var table2 = document.getElementById("table2");
+
+	//checks to see if both tables are filled out
+	if (table1.rows[1].cells[1].innerHTML!="" && table2.rows[1].cells[1].innerHTML!=""){
+		for (var i = 1; i<table1.rows[0].cells.length; i++){
+			if (table1.rows[2].cells[i].innerHTML>table2.rows[2].cells[i].innerHTML){
+				table1.rows[0].cells[i].style.fontWeight = "bolder";
+				table1.rows[2].cells[i].style.fontWeight = "bolder";
+				table1.rows[0].cells[i].style.color = "black";
+				table1.rows[2].cells[i].style.color = "black";
+
+				table2.rows[0].cells[i].style.fontWeight = "normal";
+				table2.rows[2].cells[i].style.fontWeight = "normal";
+				table2.rows[0].cells[i].style.color = "rgb(77, 77, 77)";
+				table2.rows[2].cells[i].style.color = "rgb(77, 77, 77)";
+
+
+			}
+			else if (table1.rows[2].cells[i].innerHTML<table2.rows[2].cells[i].innerHTML){
+				table1.rows[0].cells[i].style.fontWeight = "normal";
+				table1.rows[2].cells[i].style.fontWeight = "normal";
+				table1.rows[0].cells[i].style.color = "rgb(77, 77, 77)";
+				table1.rows[2].cells[i].style.color = "rgb(77, 77, 77)";
+
+				table2.rows[0].cells[i].style.fontWeight = "bolder";
+				table2.rows[2].cells[i].style.fontWeight = "bolder";
+				table2.rows[0].cells[i].style.color = "black";
+				table2.rows[2].cells[i].style.color = "black";
+			}
+			else{
+				table1.rows[0].cells[i].style.fontWeight = "normal";
+				table1.rows[2].cells[i].style.fontWeight = "normal";
+				table2.rows[0].cells[i].style.fontWeight = "normal";
+				table2.rows[2].cells[i].style.fontWeight = "normal";
+
+				table1.rows[0].cells[i].style.color = "rgb(77, 77, 77)";
+				table1.rows[2].cells[i].style.color = "rgb(77, 77, 77)";
+				table2.rows[0].cells[i].style.color = "rgb(77, 77, 77)";
+				table2.rows[2].cells[i].style.color = "rgb(77, 77, 77)";
+			}
+		}
+	}
 }

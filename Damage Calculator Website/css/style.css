@@ -9,7 +9,23 @@ h1{
 	text-align: center;
 }
 
+
+#forms{
+	display: inline-block;
+	vertical-align: middle;
+	width: 100%;
+	text-align: center;
+}
+
+h2{
+	display: inline-block;
+	vertical-align: middle;
+	height: 100%;
+	padding-left: 20px;
+}
+
 form{
+	display: inline-block;
 	font-size: 20px;
 	max-width: 100%;
 	padding-bottom: 30px;
@@ -81,10 +97,6 @@ td{
 
 #row1{
 	background-color: #f3e5d8;
-}
-
-#table1 {
-	vertical-align: middle;
 }
 
 form {
